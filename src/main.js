@@ -34,3 +34,5 @@ async function onLoadFile(e) {
     console.error('Файл не выбран');
   }
 }
+
+localStorage.removeItem('editId');

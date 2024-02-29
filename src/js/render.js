@@ -48,8 +48,12 @@ function productTemplate(product, i) {
 
         <td class="table-border"></td>
 
-        <td> <button class="btn" data-type="edit">Edit</button> </td>
-        <td> <button class="btn" data-type="delete">Delete</button> </td>
+        <td> <button class="btn" data-type="edit" data-id="${
+          product.id
+        }">Edit</button> </td>
+        <td> <button class="btn" data-type="delete" data-id="${
+          product.id
+        }">Delete</button> </td>
 
       </tr>
     `;

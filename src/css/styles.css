@@ -5,6 +5,10 @@
   |============================
 */
 @import url('./reset.css');
+@import url('./layouts/header.css');
+@import url('./layouts/product-list.css');
+@import url('./layouts/form.css');
+@import url('./base.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -20,4 +24,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }

@@ -1,0 +1,42 @@
+.product-section {
+  width: 100vw;
+  overflow: auto;
+  min-height: 90vh;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 5px solid black;
+}
+
+thead,
+tbody {
+  border: 4px solid black;
+}
+
+th {
+  background-color: #f2f2f2; /* Цвет фона заголовков */
+  color: #333; /* Цвет текста заголовков */
+  font-weight: bold; /* Жирный шрифт */
+  padding: 10px; /* Внутренние отступы */
+  border: 1px solid #ddd; /* Границы ячеек заголовков */
+  min-width: 200px;
+}
+
+td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Цвет фона четных строк */
+}
+
+.table-border {
+  min-width: 4px;
+  width: 2px;
+  padding: 0;
+  margin: 0;
+  background-color: black;
+}

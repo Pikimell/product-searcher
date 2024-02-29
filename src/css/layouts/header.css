@@ -1,0 +1,12 @@
+.header {
+  width: 100vw;
+  background-color: rgba(134, 235, 246, 0.7);
+  padding: 15px;
+  margin: 0;
+}
+
+.nav-list {
+  display: flex;
+  gap: 15px;
+  padding: 5px;
+}

@@ -13,9 +13,9 @@
     />
     
     <script type="module" crossorigin src="/product-searcher/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/product-searcher/assets/helpers-aea5b757.js">
+    <link rel="modulepreload" crossorigin href="/product-searcher/assets/helpers-f1a21cc8.js">
     <link rel="modulepreload" crossorigin href="/product-searcher/assets/vendor-848d50a8.js">
-    <link rel="stylesheet" href="/product-searcher/assets/helpers-98f555de.css">
+    <link rel="stylesheet" href="/product-searcher/assets/helpers-2192bdfd.css">
   </head>
   <body>
     <header class="header">
@@ -33,13 +33,41 @@
 </header>
 
     <section class="product-section">
+  <div class="filters">
+  <form class="box product-form js-load-form" style="width: 300px">
+    <input type="file" />
+    <button>Load File</button>
+  </form>
+
+  <form class="box product-form js-save-form" style="width: 300px">
+    <input type="file" />
+    <button>Save To File</button>
+  </form>
+
+  <form class="box filter-form js-filter-form flex">
+    <div>
+      <input type="checkbox" />
+      <input type="number" placeholder="Min Order Count" />
+    </div>
+    <div>
+      <input type="checkbox" />
+      <input type="number" placeholder="" />
+    </div>
+
+    <div>
+      <input type="checkbox" />
+      <input type="number" placeholder="" />
+    </div>
+  </form>
+</div>
+
+
   <table id="TableToExport" class="table">
     <thead>
       <tr>
         <th>№</th>
         <th>Назва продукту</th>
         <th>Джерело, де знайшли продукт</th>
-        <th>Посилання на джерело</th>
         <th>Посилання на сторінку продукта в магазині</th>
         <th>ALIEXPRESS</th>
 
@@ -66,18 +94,6 @@
     </thead>
     <tbody></tbody>
   </table>
-
-  <div>
-    <form class="box product-form js-load-form" style="width: 300px">
-      <input type="file" />
-      <button>Load File</button>
-    </form>
-
-    <form class="box product-form js-save-form" style="width: 300px">
-      <input type="file" />
-      <button>Save To File</button>
-    </form>
-  </div>
 </section>
 
 

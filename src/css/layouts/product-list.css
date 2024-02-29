@@ -39,7 +39,7 @@ td {
 }
 
 tr:nth-child(even) {
-  background-color: #d2d1d1; /* Цвет фона четных строк */
+  background-color: #d2d1d100; /* Цвет фона четных строк */
 }
 
 td.table-border,
@@ -50,4 +50,25 @@ th.table-border {
   border: 1px solid black;
   padding: 0;
   margin: 0;
+}
+
+.filters {
+  display: flex;
+}
+
+.filter-form {
+  padding: 15px;
+  margin: 15px;
+  display: flex;
+  align-items: stretch;
+  background-color: rgb(235, 235, 235);
+  gap: 10px;
+}
+
+.valid > td {
+  background-color: rgba(177, 255, 181, 0.589);
+}
+
+.invalid > td {
+  background-color: rgba(255, 229, 229, 0.49);
 }

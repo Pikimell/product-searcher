@@ -1,4 +1,4 @@
-import{l as a}from"./assets/helpers-19b93edd.js";function d(t,e){return`
+import{l as d}from"./assets/helpers-19b93edd.js";function a(t,e){return`
       <tr>
         <td>${e+1}</td>
         <td>${t.product_name}</td>
@@ -20,6 +20,12 @@ import{l as a}from"./assets/helpers-19b93edd.js";function d(t,e){return`
         <td>${t.margin}</td>
         <td>${t.niche}</td>
         <td>${t.points}</td>
+
+        <td class="table-border"></td>
+
+        <td> <button class="btn" data-type="edit">Edit</button> </td>
+        <td> <button class="btn" data-type="delete">Delete</button> </td>
+
       </tr>
-    `}function n(t){return t.map(d).join("")}const i={tableBody:document.querySelector("tbody")},l=a("user-data")||[];function r(){const t=n(l);i.tableBody.innerHTML=t}r();
+    `}function n(t){return t.map(a).join("")}const l={tableBody:document.querySelector("tbody")},s=d("user-data")||[];function i(){const t=n(s);l.tableBody.innerHTML=t}i();
 //# sourceMappingURL=commonHelpers.js.map

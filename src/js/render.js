@@ -25,6 +25,12 @@ function productTemplate(product, i) {
         <td>${product.margin}</td>
         <td>${product.niche}</td>
         <td>${product.points}</td>
+
+        <td class="table-border"></td>
+
+        <td> <button class="btn" data-type="edit">Edit</button> </td>
+        <td> <button class="btn" data-type="delete">Delete</button> </td>
+
       </tr>
     `;
 }

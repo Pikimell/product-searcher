@@ -1,7 +1,7 @@
 import { readWorkBook, getFileData, saveWorkbook, updateCell } from './excel';
 
 const START = 5;
-// const COLUMNS = 'ABCDEFGHIJKLMNOP';
+
 export async function saveDataToExcelFile(file, data) {
   const fileData = await getFileData(file);
   let workBook = readWorkBook(fileData);

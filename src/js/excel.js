@@ -70,3 +70,8 @@ function createCell(worksheet, cellAddress, value) {
 
   worksheet[cellAddress] = obj;
 }
+
+export function getCellValue(workbook, cellAddress) {
+  const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+  return worksheet[cellAddress]?.v;
+}

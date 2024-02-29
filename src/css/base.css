@@ -12,3 +12,8 @@
 .col {
   flex-direction: column;
 }
+
+a {
+  color: rgb(70, 105, 230);
+  text-decoration: underline;
+}

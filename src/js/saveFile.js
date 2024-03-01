@@ -28,14 +28,51 @@ export async function saveDataToExcelFile(file, data) {
   saveWorkbook(workBook);
 }
 
+export function saveDataToMacros(data) {
+  let resultMacros = data.reduce((result, product, i) => {
+    product.youtube_media = product.youtube_media ? 'Checked' : 'Unchecked';
+
+    for (const [key, value] of Object.entries(COLUMNS)) {
+      if (product[value])
+        result += `Range("${key}${i * 3 + START}").Value = "${
+          product[value]
+        }"\n`;
+    }
+
+    for (let index = 0; index < 3; index++) {
+      result += `Range("D${i * 3 + START + index}").Value = "${
+        product[`link_${index + 1}`]
+      }"\n`;
+    }
+
+    for (let index = 0; index < 3; index++) {
+      if (product[`supplier_link_${index + 1}`]) {
+        const cell = `I${i * 3 + START + index}`;
+        result += `Range("${cell}").Value = "${
+          product[`supplier_link_${index + 1}`]
+        }"\n`;
+      }
+    }
+
+    return result;
+  }, '');
+
+  resultMacros = resultMacros
+    .split('\n')
+    .filter(el => !el.includes('undefined'))
+    .join('\n');
+
+  return resultMacros;
+}
+
 const COLUMNS = {
   B: 'product_name',
   C: 'source',
-  E: 'aliexpress',
-  F: 'orders',
-  G: 'popularity',
+  E: 'orders',
+  F: 'popularity',
+  G: 'youtube_media',
   H: 'reviews',
-  I: 'supplier_link',
+  I: 'aliexpress',
   J: 'supplier_price',
   K: 'sale_price',
   L: 'competitor_price',

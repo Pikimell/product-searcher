@@ -1,6 +1,6 @@
 import './js/product-list';
 import { loadDataFromFile } from './js/loadFile';
-import { saveDataToExcelFile } from './js/saveFile';
+import { saveDataToExcelFile, saveDataToMacros } from './js/saveFile';
 import { loadFromLS, saveToLS } from './js/helpers';
 
 const saveForm = document.querySelector('.js-save-form');
@@ -36,3 +36,14 @@ async function onLoadFile(e) {
 }
 
 localStorage.removeItem('editId');
+
+const macrosForm = document.querySelector('.js-macros-form');
+macrosForm.addEventListener('submit', onMacrosSave);
+
+async function onMacrosSave(e) {
+  e.preventDefault();
+  const resultElem = e.target.elements[0];
+  const data = loadFromLS('user-data') || [];
+  const macros = saveDataToMacros(data);
+  resultElem.value = macros;
+}

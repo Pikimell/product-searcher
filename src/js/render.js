@@ -19,8 +19,8 @@ function productTemplate(product, i) {
         </td>
         
         <td>${
-          product.aliexpress
-            ? `<a href="${product.aliexpress}">ALIEXPRESS</a>`
+          product.supplier_link_1
+            ? `<a href="${product.supplier_link_1}">ALIEXPRESS</a>`
             : ''
         }</td>
         
@@ -33,11 +33,25 @@ function productTemplate(product, i) {
         }></td>
         <td class="table-border"></td>
 
-        <td>${
-          product.supplier_link
-            ? `<a href="${product.supplier_link}">Supplier Link</a>`
+
+        <td>
+        ${
+          product.supplier_link_1
+            ? `<a href="${product.supplier_link_1}">Store-1</a>`
             : ''
-        }</td>
+        }
+        ${
+          product.supplier_link_2
+            ? `<a href="${product.supplier_link_2}">Store-2</a>`
+            : ''
+        }
+        ${
+          product.supplier_link_3
+            ? `<a href="${product.supplier_link_3}">Store-3</a>`
+            : ''
+        }
+        </td>
+        
         <td>${product.supplier_price || ''}</td>
         <td>${product.sale_price || ''}</td>
         <td>${product.competitor_price || ''}</td>

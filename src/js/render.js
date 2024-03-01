@@ -28,7 +28,7 @@ function productTemplate(product, i) {
         <td class="number">${product.orders || ''}</td>
         <td class="number">${product.popularity || ''}</td>
         <td class="number">${product.reviews || ''}</td>
-        <td><input type="checkbox" ${product.youtube_media}></td>
+        <td><input type="checkbox" ${product.youtube_media.toLowerCase()}></td>
         <td class="table-border"></td>
 
 

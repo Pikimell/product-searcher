@@ -52,12 +52,14 @@ function onFormSave(e) {
   const formData = new FormData(e.target);
   const productIndex = userData.findIndex(el => el.id === id);
   const product = { ...userData[productIndex] };
+  delete product.youtube_media;
 
   formData.forEach((value, key) => {
     product[key] = value;
   });
 
   product.youtube_media = product.youtube_media ? 'Checked' : 'Unchecked';
+  console.log(product.youtube_media);
 
   userData.splice(productIndex, 1, product);
   saveToLS('user-data', userData);

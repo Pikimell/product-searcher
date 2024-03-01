@@ -3,9 +3,7 @@ function productTemplate(product, i) {
   const validPopularity = parseInt(product.popularity) >= 40;
   const validMedia = product.youtube_media;
   const isValid = validOrders && validPopularity && validMedia;
-
   const myClass = isValid ? 'valid' : 'invalid';
-
   return `
       <tr class=${myClass}>
         <td>${i + 1 || ''}</td>
@@ -28,7 +26,9 @@ function productTemplate(product, i) {
         <td class="number">${product.orders || ''}</td>
         <td class="number">${product.popularity || ''}</td>
         <td class="number">${product.reviews || ''}</td>
-        <td><input type="checkbox" ${product.youtube_media.toLowerCase()}></td>
+        <td><input type="checkbox" ${product.youtube_media
+          .toString()
+          .toLowerCase()}></td>
         <td class="table-border"></td>
 
 

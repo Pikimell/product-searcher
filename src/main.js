@@ -2,6 +2,10 @@ import './js/product-list';
 import { loadDataFromFile } from './js/loadFile';
 import { saveDataToExcelFile, saveDataToMacros } from './js/saveFile';
 import { loadFromLS, saveToLS } from './js/helpers';
+import { productsTemplate } from './js/render';
+const refs = {
+  tableBody: document.querySelector('tbody'),
+};
 
 const saveForm = document.querySelector('.js-save-form');
 
@@ -30,6 +34,8 @@ async function onLoadFile(e) {
   if (file) {
     const data = await loadDataFromFile(file);
     saveToLS('user-data', data);
+    const markup = productsTemplate(data);
+    refs.tableBody.innerHTML = markup;
   } else {
     console.error('Файл не выбран');
   }

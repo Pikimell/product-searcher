@@ -23,19 +23,18 @@ th {
   border: 1px solid #ddd; /* Границы ячеек заголовков */
   text-align: center;
   width: fit-content;
-  min-width: 200px;
   vertical-align: middle;
 }
 
 td {
   padding: 8px;
   border: 1px solid #ddd;
-  max-width: 200px;
-  overflow: hidden;
+  overflow: auto;
   max-height: 10px;
   text-align: center;
   word-wrap: unset;
   vertical-align: middle;
+  text-wrap: nowrap;
 }
 
 tr:nth-child(even) {
@@ -44,8 +43,6 @@ tr:nth-child(even) {
 
 td.table-border,
 th.table-border {
-  max-width: 2px !important;
-  min-width: 2px !important;
   width: 2px !important;
   border: 1px solid black;
   padding: 0;
@@ -71,4 +68,12 @@ th.table-border {
 
 .invalid > td {
   background-color: rgba(255, 229, 229, 0.49);
+}
+
+td.product-name {
+  width: 300px;
+}
+
+td.number {
+  width: 50px;
 }

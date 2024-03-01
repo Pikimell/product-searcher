@@ -9,7 +9,6 @@ const COLUMNS = {
   F: 'popularity',
   G: 'youtube_media',
   H: 'reviews',
-  I: 'supplier_link',
   J: 'supplier_price',
   K: 'sale_price',
   L: 'competitor_price',
@@ -40,6 +39,14 @@ export async function loadDataFromFile(file) {
         `D${counter * 3 + START + index}`
       );
     }
+
+    for (let index = 0; index < 3; index++) {
+      product[`supplier_link_${index + 1}`] = getCellValue(
+        workBook,
+        `I${counter * 3 + START + index}`
+      );
+    }
+
     product.id = generateID();
     console.log(product);
     if (!product.product_name) break;

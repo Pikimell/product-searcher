@@ -28,32 +28,51 @@
 
   <div class="mb-3">
     <div class="form-text">Supplier price + delivery</div>
-    <input type="number" class="form-control" name="supplier_price" />
+    <input type="number" class="form-control" name="supplier_price" value="0" />
   </div>
 
   <div class="mb-3">
     <div class="form-text">Sale price (x3)</div>
-    <input type="number" class="form-control" name="sale_price" />
+    <input type="number" class="form-control" name="sale_price" value="0" />
   </div>
 
   <div class="mb-3">
     <div class="form-text">Вартість продукту у конкурентів</div>
-    <input type="number" class="form-control" name="competitor_price" />
+    <input
+      type="number"
+      class="form-control"
+      name="competitor_price"
+      value="0"
+    />
   </div>
 
   <div class="mb-3">
     <div class="form-text">Margin</div>
-    <input type="number" class="form-control" name="margin" />
+    <input type="number" class="form-control" name="margin" value="0" />
   </div>
 
   <div class="mb-3">
-    <div class="form-text">Niche</div>
-    <input type="text" class="form-control" name="niche" />
+    <div class="form-text">Niche (Ніша)</div>
+    <select
+      class="form-select"
+      name="niche"
+      aria-label="Default select example"
+    >
+      <option value="None" selected>None</option>
+      <option value="Health">Health</option>
+      <option value="Beauty">Beauty</option>
+      <option value="Sport(Fitness)">Sport(Fitness)</option>
+      <option value="DIY">DIY</option>
+      <option value="Home/Kitchen">Home/Kitchen</option>
+      <option value="Home/Decor">Home/Decor</option>
+      <option value="Pets">Pets</option>
+      <option value="Fishing">Fishing</option>
+    </select>
   </div>
 
   <div class="mb-3">
     <div class="form-text">Points</div>
-    <input type="number" class="form-control" name="points" />
+    <input type="number" class="form-control" name="points" value="0" />
   </div>
 
   <div class="mb-3">

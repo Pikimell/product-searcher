@@ -9,7 +9,7 @@ function productTemplate(product, i) {
   return `
       <tr class=${myClass}>
         <td>${i + 1 || ''}</td>
-        <td>${product.product_name || ''}</td>
+        <td class="product-name">${product.product_name || ''}</td>
         <td>${product.source || ''}</td>
 
         <td>
@@ -25,12 +25,10 @@ function productTemplate(product, i) {
         }</td>
         
         <td class="table-border"></td>
-        <td>${product.orders || ''}</td>
-        <td>${product.popularity || ''}</td>
-        <td>${product.reviews || ''}</td>
-        <td><input type="checkbox" ${
-          product.youtube_media ? 'checked' : ''
-        }></td>
+        <td class="number">${product.orders || ''}</td>
+        <td class="number">${product.popularity || ''}</td>
+        <td class="number">${product.reviews || ''}</td>
+        <td><input type="checkbox" ${product.youtube_media}></td>
         <td class="table-border"></td>
 
 
@@ -52,13 +50,13 @@ function productTemplate(product, i) {
         }
         </td>
         
-        <td>${product.supplier_price || ''}</td>
-        <td>${product.sale_price || ''}</td>
-        <td>${product.competitor_price || ''}</td>
-        <td>${product.comments || ''}</td>
-        <td>${product.margin || ''}</td>
+        <td class="number">${product.supplier_price || ''}</td>
+        <td class="number">${product.sale_price || ''}</td>
+        <td class="number">${product.competitor_price || ''}</td>
+        <td class="number">${product.margin || ''}</td>
         <td>${product.niche || ''}</td>
-        <td>${product.points || ''}</td>
+        <td>${product.comments || ''}</td>
+        <td class="number">${product.points || ''}</td>
 
         <td class="table-border"></td>
 

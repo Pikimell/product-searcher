@@ -1,4 +1,4 @@
-import{l as p,s as $}from"./assets/helpers-bd911960.js";import{r as S,w as g,F,v as w}from"./assets/vendor-848d50a8.js";function x(e,s){const t=parseInt(e.orders)>500,n=parseInt(e.popularity)>50,i=e.youtube_media;return`
+import{l as p,s as $}from"./assets/helpers-bd911960.js";import{r as S,w as g,F,v as w}from"./assets/vendor-848d50a8.js";function x(e,s){const t=parseInt(e.orders)>500,n=parseInt(e.popularity)>=30,i=e.youtube_media;return`
       <tr class=${t&&n&&i?"valid":"invalid"}>
         <td>${s+1||""}</td>
         <td class="product-name">${e.product_name||""}</td>

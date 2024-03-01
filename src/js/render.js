@@ -1,6 +1,6 @@
 function productTemplate(product, i) {
   const validOrders = parseInt(product.orders) > 500;
-  const validPopularity = parseInt(product.popularity) > 50;
+  const validPopularity = parseInt(product.popularity) >= 30;
   const validMedia = product.youtube_media;
   const isValid = validOrders && validPopularity && validMedia;
 

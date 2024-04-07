@@ -56,7 +56,7 @@ function productTemplate(product, i) {
         <td class="number">${product.margin || ''}</td>
         <td>${product.niche || ''}</td>
         <td class="desc">${product.comments || ''}</td>
-        <td class="number">${product.points || ''}</td>
+        <td class="number">${getPoints(product) || ''}</td>
 
         <td class="table-border"></td>
 
@@ -69,6 +69,24 @@ function productTemplate(product, i) {
 
       </tr>
     `;
+}
+
+function getPoints({
+  orders,
+  popularity,
+  reviews,
+  youtube_media,
+  supplier_price,
+  sale_price,
+}) {
+  console.log(youtube_media);
+  const point1 = Number(orders >= 300 && orders <= 10000);
+  const point2 = Number(popularity >= 50);
+  const point3 = Number(reviews >= 4);
+  const point4 = Number(youtube_media === 'Checked');
+  const point5 = Number(sale_price - supplier_price >= 30);
+
+  return point1 + point2 + point3 + point4 + point5;
 }
 
 export function productsTemplate(products) {

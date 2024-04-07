@@ -96,7 +96,7 @@ function onChangeItem(e) {
       productIndex = 0;
       return;
     }
-    const id = userData[productIndex].id;
+    id = userData[productIndex].id;
     loadProductData(id);
   }
 }

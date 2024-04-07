@@ -1,4 +1,5 @@
 import './js/product-list';
+import './js/filters';
 import { loadDataFromFile } from './js/loadFile';
 import { saveDataToExcelFile, saveDataToMacros } from './js/saveFile';
 import { loadFromLS, saveToLS } from './js/helpers';

@@ -2,7 +2,7 @@ function productTemplate(product, i) {
   const validOrders = parseInt(product.orders) > 500;
   const validPopularity = parseInt(product.popularity) >= 40;
   const validMedia = product.youtube_media;
-  const isValid = validOrders && validPopularity && validMedia;
+  const isValid = false; //validOrders && validPopularity && validMedia;
   const myClass = isValid ? 'valid' : 'invalid';
   return `
       <tr class=${myClass}>
@@ -71,24 +71,28 @@ function productTemplate(product, i) {
     `;
 }
 
-function getPoints({
-  orders,
-  popularity,
-  reviews,
-  youtube_media,
-  supplier_price,
-  sale_price,
-}) {
-  console.log(youtube_media);
+function getPoints(product) {
+  const {
+    orders,
+    popularity,
+    reviews,
+    youtube_media,
+    supplier_price,
+    sale_price,
+  } = product;
+
   const point1 = Number(orders >= 300 && orders <= 10000);
   const point2 = Number(popularity >= 50);
   const point3 = Number(reviews >= 4);
   const point4 = Number(youtube_media === 'Checked');
   const point5 = Number(sale_price - supplier_price >= 30);
-
-  return point1 + point2 + point3 + point4 + point5;
+  product.points = point1 + point2 + point3 + point4 + point5;
+  return product.points;
 }
 
 export function productsTemplate(products) {
-  return products.map(productTemplate).join('');
+  console.log(products);
+  const markup = products.map(productTemplate).join('');
+  localStorage.setItem('user-data', JSON.stringify(products));
+  return markup;
 }

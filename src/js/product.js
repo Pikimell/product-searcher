@@ -21,6 +21,7 @@ function init() {
 }
 
 function loadProductData(id) {
+  refs.form.reset();
   const product = userData.find(el => el.id === id);
   if (!product) return;
   for (const [key, value] of Object.entries(product)) {

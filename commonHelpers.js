@@ -1,4 +1,4 @@
-import{l as p,s as $}from"./assets/helpers-bd911960.js";import{r as g,w as F,F as L,v as w}from"./assets/vendor-848d50a8.js";function x(e,s){const t=parseInt(e.orders)>500,n=parseInt(e.popularity)>=40,r=e.youtube_media;return`
+import{l as p,s as $}from"./assets/helpers-0f358616.js";import{r as g,w as F,F as L,v as w}from"./assets/vendor-848d50a8.js";function x(e,s){const t=parseInt(e.orders)>500,n=parseInt(e.popularity)>=40,r=e.youtube_media;return`
       <tr class=${t&&n&&r?"valid":"invalid"}>
         <td>${s+1||""}</td>
         <td class="product-name">${e.product_name||""}</td>
@@ -31,7 +31,7 @@ import{l as p,s as $}from"./assets/helpers-bd911960.js";import{r as g,w as F,F a
         <td class="number">${e.competitor_price||""}</td>
         <td class="number">${e.margin||""}</td>
         <td>${e.niche||""}</td>
-        <td>${e.comments||""}</td>
+        <td class="desc">${e.comments||""}</td>
         <td class="number">${e.points||""}</td>
 
         <td class="table-border"></td>

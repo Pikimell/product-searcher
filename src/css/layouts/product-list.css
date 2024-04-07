@@ -30,10 +30,10 @@ td {
   padding: 8px;
   border: 1px solid #ddd;
   overflow: auto;
-  max-height: 10px;
   text-align: center;
   word-wrap: unset;
   vertical-align: middle;
+  overflow: auto;
   text-wrap: nowrap;
 }
 
@@ -72,8 +72,14 @@ th.table-border {
 
 td.product-name {
   width: 300px;
+  max-width: 300px;
 }
 
 td.number {
   width: 50px;
+}
+
+.desc {
+  width: 400px;
+  max-width: 400px;
 }

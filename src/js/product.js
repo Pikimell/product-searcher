@@ -2,19 +2,26 @@ import { v4 as generateID } from 'uuid';
 import { saveToLS, loadFromLS } from './helpers';
 const userData = loadFromLS('user-data') || [];
 const id = loadFromLS('editId');
+let productIndex = null;
 
 const refs = {
   form: document.querySelector('.js-product-form'),
 };
 
 function init() {
+  window.addEventListener('keydown', onChangeItem);
   if (!id) {
     refs.form.addEventListener('submit', onFormSubmit);
     return;
   }
+  productIndex = userData.findIndex(el => el.id === id);
+  loadProductData(id);
+  refs.form.elements.btn.textContent = 'Save Changes';
+  refs.form.addEventListener('submit', onFormSave);
+}
 
+function loadProductData(id) {
   const product = userData.find(el => el.id === id);
-  console.log(product, id);
   if (!product) return;
   for (const [key, value] of Object.entries(product)) {
     if (refs.form.elements[key]) refs.form.elements[key].value = value;
@@ -24,10 +31,6 @@ function init() {
 
   setActiveOption(refs.form.elements.source, product.source);
   setActiveOption(refs.form.elements.niche, product.niche || '');
-
-  refs.form.elements.btn.textContent = 'Save Changes';
-
-  refs.form.addEventListener('submit', onFormSave);
 }
 
 function onFormSubmit(e) {
@@ -64,10 +67,12 @@ function onFormSave(e) {
   userData.splice(productIndex, 1, product);
   saveToLS('user-data', userData);
 
-  localStorage.removeItem('editId');
-  const a = document.createElement('a');
-  a.href = './index.html';
-  a.click();
+  e.target.reset();
+
+  // localStorage.removeItem('editId');
+  // const a = document.createElement('a');
+  // a.href = './index.html';
+  // a.click();
 }
 
 init();
@@ -79,5 +84,18 @@ function setActiveOption(selectElement, optionValue) {
       options[i].selected = true;
       break;
     }
+  }
+}
+
+function onChangeItem(e) {
+  if (e.code === 'ArrowRight' || e.code === 'ArrowLeft') {
+    const change = e.code === 'ArrowRight' ? 1 : -1;
+    productIndex += change;
+    if (productIndex < 0 || productIndex > userData.length) {
+      productIndex = 0;
+      return;
+    }
+    const id = userData[productIndex].id;
+    loadProductData(id);
   }
 }

@@ -55,7 +55,7 @@ function productTemplate(product, i) {
         <td class="number">${product.competitor_price || ''}</td>
         <td class="number">${product.margin || ''}</td>
         <td>${product.niche || ''}</td>
-        <td>${product.comments || ''}</td>
+        <td class="desc">${product.comments || ''}</td>
         <td class="number">${product.points || ''}</td>
 
         <td class="table-border"></td>

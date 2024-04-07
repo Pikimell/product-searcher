@@ -1,7 +1,7 @@
 import { v4 as generateID } from 'uuid';
 import { saveToLS, loadFromLS } from './helpers';
 const userData = loadFromLS('user-data') || [];
-const id = loadFromLS('editId');
+let id = loadFromLS('editId');
 let productIndex = null;
 
 const refs = {
